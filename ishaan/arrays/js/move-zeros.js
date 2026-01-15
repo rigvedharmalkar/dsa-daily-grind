@@ -2,25 +2,25 @@ const arr = [1, 2, 0, 3, 4, 0, 5, 0];
 const n = arr.length;
 
 function moveZeros(nums, n) {
-  if (arr.length === 1) {
-    return arr;
+  if (nums.length === 1) {
+    return nums;
   }
   let j = -1;
 
   for (let i = 0; i < n; i++) {
-    if (arr[i] === 0) {
+    if (nums[i] === 0) {
       j = i;
       break;
     }
   }
 
   for (let i = j + 1; i < n; i++) {
-    if (arr[i] !== 0) {
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+    if (nums[i] !== 0) {
+      [nums[i], nums[j]] = [nums[j], nums[i]];
       j++;
     }
   }
   return arr;
 }
 
-console.log(moveZeros(nums, n));
+console.log(moveZeros(arr, n));
