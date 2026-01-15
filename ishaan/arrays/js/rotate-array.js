@@ -1,3 +1,4 @@
+// Rotate array based on direction and k elements
 const nums = [1, 2, 3, 4, 5, 6, 7];
 const k = 2;
 const direction = "right";
@@ -40,13 +41,17 @@ function leftRotate(nums) {
   };
 }
 
-switch (direction) {
-  case "right":
-    console.log(rightRotate(nums));
-    return rightRotate(nums);
-  case "left":
-    console.log(leftRotate(nums));
-    return leftRotate(nums);
-  default:
-    return null;
+function rotateArray(direction, nums) {
+  switch (direction) {
+    case "right":
+      return rightRotate(nums);
+    case "left":
+      return leftRotate(nums);
+    default:
+      return {
+        message: "Please provide correct direction",
+      };
+  }
 }
+
+console.log(rotateArray(direction, nums));
